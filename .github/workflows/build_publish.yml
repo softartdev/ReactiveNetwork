@@ -22,5 +22,13 @@ jobs:
         run: ./.github/scripts/decrypt_secret.sh
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-      - name: Build & Publish
-        run: ./release.sh
+      - name: Build
+        run: ./gradlew build
+      - name: Test
+        run: ./gradlew test
+      - name: Check
+        run: ./gradlew check
+      - name: Upload Archives
+        run: ./gradlew uploadArchives
+      - name: Close And Release Repository
+        run: ./gradlew closeAndReleaseRepository
