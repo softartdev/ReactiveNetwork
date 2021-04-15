@@ -22,10 +22,8 @@ jobs:
         run: ./.github/scripts/decrypt_secret.sh
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-      - name: Clean
-        run: ./gradlew clean
-      - name: Build
-        run: ./gradlew build
+      - name: Assemble
+        run: ./gradlew assemble
       - name: Test
         run: ./gradlew test
       - name: Check
