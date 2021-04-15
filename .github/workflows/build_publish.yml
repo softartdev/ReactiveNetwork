@@ -9,6 +9,7 @@ jobs:
   build_unit_test_publish_job:
     name: Build -> Unit-test -> Publish
     runs-on: ubuntu-latest
+    container: softartdev/android-fastlane:latest
     steps:
       - uses: actions/checkout@v1
       - name: Cache gradle
